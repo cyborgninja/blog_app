@@ -1,7 +1,10 @@
 class EntriesController < ApplicationController
   def show
     @blog = Blog.find(params[:blog_id])
-    @entry = Entry.find(params[:id])
+    @entry = Entry.find_by(id: params[:id], blog_id: params[:blog_id])
+    if @entry.nil?
+      redirect_to blog_path(params[:blog_id])
+    end
   end
 
   def new
