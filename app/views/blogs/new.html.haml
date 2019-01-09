@@ -1,0 +1,5 @@
+= form_with model: @blog do |form|
+  = form.label "Title"
+  = form.text_field :title
+  = form.submit :value => "Save"
+= link_to "Back", :back

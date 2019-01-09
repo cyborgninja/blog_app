@@ -1,0 +1,11 @@
+%h1 Listing blogs
+%table
+  %tr
+    %th Title
+  - @blogs.each do |blog|
+    %tr
+      %td= blog.title
+      %td= link_to "Show", blog_path(blog.id), method: :get
+      %td= link_to "Edit", edit_blog_path(blog.id), method: :get
+      %td= link_to "Destroy", blog_path(blog.id), method: :delete
+= link_to "New Blog", new_blog_path
