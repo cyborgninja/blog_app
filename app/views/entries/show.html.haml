@@ -14,7 +14,7 @@
         %th= link_to "Destroy", blog_entry_comment_path(@blog.id, @entry.id, comment.id), method: :delete
       - else
         %th (承認待ち)
-        %th= link_to "Approve", ''
+        %th= link_to "Approve", comment_approve_path(@blog.id, @entry.id, comment.id), method: :patch
         %th= link_to "Destroy", blog_entry_comment_path(@blog.id, @entry.id, comment.id), method: :delete
 %h3 New comment
 = form_with model: Comment.new, url: blog_entry_comments_path(@blog.id, @entry.id), method: :post do |form|
