@@ -1,0 +1,11 @@
+-#%html
+-#  %head
+-#    %meta content='text/html; charset=UTF-8' htttp-equiv='Content-Type' /
+%body
+  %p 新しいコメントが登録されました。
+  %br
+  %p 承認または削除してください。
+  %br
+  %p Blog: #{@blog.title}
+  %p Entry: #{@entry.body}
+  %p Comment: #{@comment.body}
